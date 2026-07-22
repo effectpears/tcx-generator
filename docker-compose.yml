@@ -1,0 +1,10 @@
+services:
+  tcx-generator:
+    image: php:8.2-apache
+    container_name: tcx-generator
+    restart: unless-stopped
+    ports:
+      - "8086:80"
+    volumes:
+      - ./src:/var/www/html # index.php
+      - ./watch:/var/www/html/tcx_export 
